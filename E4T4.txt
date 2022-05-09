@@ -1,0 +1,4 @@
+1. Put Web instance to the private subnet which only accept traffic from IGW's Security group
+2. No, because attacker using the authorized instance to access files in S3
+3. No, It only affected to on-going uploaded files in the future.
+4. Changes made outside of CloudFormation can complicate stack update or deletion operations. https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html

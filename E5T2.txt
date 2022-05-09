@@ -1,0 +1,17 @@
+## Scan infrastructure as code templates
+Checkov, TFLint, Terrafirma, Accurics, CloudSploit
+
+### Example vulnerability
+Misconfigurations as public accessible SSH, cloud storage services, internet-accessible databases, configuring some open-security groups, and more.
+
+##Scan AMI’s or containers for OS vulnerabilities
+Clair, Anchore, Dagda
+
+### Example vulnerability
+AMI or containers have used a malware packages that scan files in OS export to destination server.
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config should be used for this kind of works.
+
+### Example vulnerability
+It will make sure every configuration in the environment following the rules as defined

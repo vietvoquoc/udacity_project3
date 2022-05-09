@@ -1,0 +1,5 @@
+1.1. Using system manager for SSH
+1.2. Remove SG rules that allow 22 port access
+1.3. Explicitly add Deny rule in Subnet which EC2 located
+------------------
+2. Using MFA and presigned URL in S3

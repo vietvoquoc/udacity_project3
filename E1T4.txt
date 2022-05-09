@@ -1,0 +1,9 @@
+1. Do not setup the rule for WebAppSG to be only receive the traffics from AppLoadBalancerSG
+=> Need to setup new rule to only accept traffics from AppLoadBalancerSG
+2. Do not config IAM role policy to only allow the correct EC2 to assume the sufficient role
+to get secret policy.
+=> Need to restrict which Principal allowed to assume the appropriate role.
+3. Do not config bucket policy of S3 to only allow which Principal can access those buckets.
+=> Need to config which Principal can access those S3 buckets
+4. Do not use S3 gateway endpoint to access objects in bucket in order to enhance security access.
+=> Apply s3 gateway endpoint
