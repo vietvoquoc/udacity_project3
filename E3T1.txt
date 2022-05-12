@@ -1,3 +1,24 @@
-1.Password support for SSH login
-2.Already did
-3.GuardDuty analyze events across multiple AWS data sources, such as AWS CloudTrail event logs, Amazon Virtual Private Cloud (VPC) flow Logs, and DNS query logs to identify the threat continuously.
+# Describe GuardDuty findings that were detected related to the brute force attack.
+
+Based on GuardDuty findings, we can see:
+## 1:
+- Low severity,
+- Finding type: UnauthorizedAccess:EC2/SSHBruteForce
+- Description: 10.192.11.106 is performing SSH brute force attacks against i-0db5014cb4d2ab0a1.
+
+## 2:
+- High severity,
+- Finding type: UnauthorizedAccess:EC2/SSHBruteForce
+- Description: The instance which has the id i-00f2aab4d3bb9d536 (IP: 10.192.11.106) is performing SSH Brute Force attacks against application server which has IP address 10.192.10.118.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+- "Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs." (https://docs.aws.amazon.com/guardduty/latest/APIReference/Welcome.html).
+
+- In this case, data source is "VPC Flow Logs".
+
+- "VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC" (https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html).
+
+- By the information that the GuardDuty finding provided, we can see that an EC2 instance (Attack Instance - C3 - i-00f2aab4d3bb9d536) in AWS environment was tried to perform a brute force attack aimed at obtaining passwords to SSH services on i-0db5014cb4d2ab0a1 (Web Service Instance - C).
+
+- This finding only monitor traffic on port 22 so if you change SSH service from port 22 to the other port, the finding will no be generated.
